@@ -1,14 +1,23 @@
-import matplotlib.pyplot as plt
 import pandas as pd
-# exp_data is a dataframe containing experimental data. It has series "vectors" with titles
-# in the first "series". 0: cycle number, 1: time(s), 2: Potential (V), 3: Capacity (mAh), 4: Current (mA)
-exp_data = pd.read_csv('19kura200ul128cc-01cv_C09.txt', delimiter="\t", decimal=',')
 
+# Sample DataFrame with a series
+data = {'values': [-1, 2, 3, -4, -5, 6, 7]}
+df = pd.DataFrame(data)
 
-mass = 8.55E-3  # active mass HC of electrode in g
-plt.plot(exp_data.iloc[:, 3]/mass, exp_data.iloc[:, 2])
+# Initialize an empty list to store indices of sign changes
+sign_change_indices = []
 
-plt.xlabel("Capacity mAh/g")
-plt.ylabel("Voltage(V)")
-# plt.legend(['Cell 1.2'],['Cell 1.4'])
-plt.show()
+# Iterate over the series
+for i in range(1, len(df)):
+    # Check if the sign changes
+    if (df['values'].iloc[i] >= 0 and df['values'].iloc[i-1] < 0) or (df['values'].iloc[i] < 0 and df['values'].iloc[i-1] >= 0):
+        sign_change_indices.append(i)
+
+print("What do you want to plot on the x- and y-axis?"
+      "1:time(s),2:Potential(V),3:Capacity(mAh),4:Current(mA)")
+x = input()
+y= input()
+
+print("Which cycle do you want to plot?")
+cycle = input()
+# print(sign_change_indices)
