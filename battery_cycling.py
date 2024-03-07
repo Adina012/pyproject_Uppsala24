@@ -1,7 +1,7 @@
 import pandas as pd
-
+file_name= AL_lithiated141_3form1ma_C08.txt
 # Sample DataFrame with a series
-data = {'values': [-1, 2, 3, -4, -5, 6, 7]}
+data = pd.read_csv('file_name',' delimiter="\t", decimal=',')
 df = pd.DataFrame(data)
 
 # Initialize an empty list to store indices of sign changes
