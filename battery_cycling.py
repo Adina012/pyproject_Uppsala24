@@ -28,9 +28,14 @@ print("What do you want to plot on the x- and y-axis?"
 x = input()
 y= input()
 
-print("Which cycle do you want to plot?")
-cycle = input()
-# print(sign_change_indices)
+print("Which lithiation/delithiation do you want to plot?"
+      "Example: If you want to plot the 1st lithiation give input 1, and for 1st delithiation typ 2,"
+      "so to plot the 10th lithiation type 20, and the 10th delithiation type 21.")
+no_de_lithiation = input()
 
 
-plt.plot(df.iloc[:, _], df.iloc[:, _])
+if x==1 and y==2:
+    plt.plot()
+
+
+#plt.plot(df.iloc[:, _], df.iloc[:, _])
