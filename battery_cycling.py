@@ -9,9 +9,9 @@ df = pd.DataFrame(data)
 sign_change_indices = []
 
 # Iterate over the series
-for i in range(1, len(df)):
+for i in range(len(df) - 1):
     # Check if the sign changes
-    if (df.iloc[i,5] >= 0 and df.iloc[i+1,5] < 0) or (df.iloc[i,5] < 0 and df.iloc[i+1,5] >= 0):
+    if (df.iloc[i, 4] >= 0 and df.iloc[i + 1, 4] < 0) or (df.iloc[i, 4] < 0 and df.iloc[i + 1, 4] >= 0):
         sign_change_indices.append(i)
 print(sign_change_indices)
 print("What do you want to plot on the x- and y-axis?"
