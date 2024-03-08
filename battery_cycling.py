@@ -10,7 +10,7 @@ Then you are asked what you want to plot on the respective axis:
 '''
 
 # Load the data
-data = pd.read_csv('AL_lithiated141_3form1ma_C08.txt', delimiter="\t", decimal=",")
+data = pd.read_csv('file_name.txt', delimiter="\t", decimal=",")
 df = pd.DataFrame(data)
 
 # Initialize an empty list to store indices of sign changes
